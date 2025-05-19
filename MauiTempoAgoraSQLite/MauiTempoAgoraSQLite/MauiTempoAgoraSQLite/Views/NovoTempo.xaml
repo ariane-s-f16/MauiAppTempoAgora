@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTempoAgoraSQLite.Views.NovoTempo"
+             Title="NovoTempo">
+    
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="salvar" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <VerticalStackLayout>
+
+        <Label Text="LATITUDE:"/>
+        <Entry x:Name="txt_LAT" Keyboard="Numeric"/>
+
+        <Label Text="LONGITUDE: "/>
+        <Entry x:Name="txt_LON" Keyboard="Numeric"/>
+
+        <Label Text="TEMPERATURA MÁXIMA: "/>
+        <Entry x:Name="txt_TEMMAX" Keyboard="Numeric"/>
+
+  
+        <Label Text="TEMPERATURA MÍNIMA: "/>
+        <Entry x:Name="txt_TEMMIN" Keyboard="Numeric"/>
+
+        <Label Text="VENTANIA: "/>
+        <Entry x:Name="txt_VENTANIA" Keyboard="Numeric"/>
+
+        <Label Text="VISIBILIDADE DO CÉU: "/>
+        <Entry x:Name="txt_VISIBILIDADE" />
+
+        <Label Text="DESCRIÇÃO: "/>
+        <Entry x:Name="txt_DESCRICAO" />
+
+        <Label Text="AMANHECER: "/>
+        <Entry x:Name="txt_AMANHECER" />
+
+        <Label Text="POR DO SOL: "/>
+        <Entry x:Name="txt_PORDOSOL"/>
+
+
+
+
+    </VerticalStackLayout>
+
+
+</ContentPage>
