@@ -1,21 +1,24 @@
-﻿using compras.Models; //
+﻿
 using SQLite;
+using MauiTempoAgoraSQLite.Models;
 
-namespace compras.Helpers //
+
+
+namespace MauiTempoAgoraSQLite.Helpers //
 {
-    public class SQLiteDatabaseHelper
+    public class SQLiteDatabasetempo
     {
         readonly SQLiteAsyncConnection _conn;
 
-        public SQLiteDatabaseHelper(string path)
+        public SQLiteDatabaseTempo(string path)
         {
             _conn = new SQLiteAsyncConnection(path);
-            _conn.CreateTableAsync<Produto>().Wait();
+            _conn.CreateTableAsync<Tempo>().Wait();
 
 
         }
 
-        public Task<int> Insert(tempo t)
+        public Task<int> Insert(Tempo t)
         {
             return _conn.InsertAsync(t);
 
@@ -24,14 +27,14 @@ namespace compras.Helpers //
         {
             return _conn.Table<Tempo>().DeleteAsync(i => i.Id == id);
         }
-        public Task<List<tempo>> Update(Tempo t)
+        public Task<List<Tempo>> Update(Tempo t)
         {
             string sql = "Update tempo description=?, temp_min=?, temp_min=?,  Where id=?";
-            return _conn.QueryAsync<Produto>(sql, t.description, t.tempo_min, t.tempo_min, t.Id);
+            return _conn.QueryAsync<Tempo>(sql, t.description, t.tempo_max, t.tempo_min, t.Id);
 
         }
 
-        public Task<List<Produto>> GetAll()
+        public Task<List<Tempo>> GetAll()
         {
             return _conn.Table<Tempo>().ToListAsync();
         }
@@ -41,6 +44,6 @@ namespace compras.Helpers //
 
             string sql = "SELECT * FROM tempo WHERE description LIKE '%" + t + "%'";
 
-            return _conn.QueryAsync<Produto>(sql);
+            return _conn.QueryAsync<Tempo>(sql);
         }
     }

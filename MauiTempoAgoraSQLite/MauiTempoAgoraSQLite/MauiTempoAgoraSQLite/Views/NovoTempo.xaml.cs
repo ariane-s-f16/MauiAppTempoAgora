@@ -1,5 +1,6 @@
 using MauiTempoAgoraSQLite.Models;
 
+using SQLite;
 namespace MauiTempoAgoraSQLite.Views;
 
 public partial class NovoTempo : ContentPage
