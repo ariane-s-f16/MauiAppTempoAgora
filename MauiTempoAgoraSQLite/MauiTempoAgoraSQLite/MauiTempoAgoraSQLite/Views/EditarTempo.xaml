@@ -18,6 +18,18 @@
 
             <Label Text="Temperatura Mínima: "/>
             <Entry x:Name="txt_TEMMIN"  Text="{Binding Temperatura minima}" Keyboard="Numeric"/>
-        </VerticalStackLayout>
+            
+            <Label Text="Temperatura Mínima: "/>
+        <Entry x:Name="txt_LON"  Text="{Binding  Longitude}" Keyboard="Numeric"/>
+
+        <Label Text="Temperatura Mínima: "/>
+        <Entry x:Name="txt_LAT"  Text="{Binding  Latitude}" Keyboard="Numeric"/>
+            
+        <Label Text="Temperatura Mínima: "/>
+        <Entry x:Name="txt_VENTANIA"  Text="{Binding Ventania}" Keyboard="Numeric"/>
+            
+        <Label Text="Temperatura Mínima: "/>
+        <Entry x:Name="txt_PORDOSOL"  Text="{Binding Por do sol}" Keyboard="Numeric"/>
+    </VerticalStackLayout>
   
 </ContentPage>
