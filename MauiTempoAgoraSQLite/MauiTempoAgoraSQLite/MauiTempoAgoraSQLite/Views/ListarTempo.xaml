@@ -19,8 +19,8 @@
 					<Label Grid.Column="1" Text="Descricao"/>
 					<Label Grid.Column="2" Text="Latitude"/>
 					<Label Grid.Column="3" Text="Longitude"/>
-					<Label Grid.Column="4" Text="Temperatura máxima"/>
-					<Label Grid.Column="4" Text="Temperatura mínima"/>
+					<Label Grid.Column="4" Text="Temperatura maxima"/>
+					<Label Grid.Column="4" Text="Temperatura minima"/>
 					<Label Grid.Column="4" Text="Ventania"/>
 					<Label Grid.Column="4" Text="ensolarado"/>
 					<Label Grid.Column="4" Text="Por do sol"/>
@@ -33,11 +33,15 @@
 							<MenuItem Text=" Remover" Clicked="MenuItem_Clicked"/>
 						</ViewCell.ContextActions>
 						<Grid ColumnDefinitions="*,*,*,*,*">
-							<Label Grid.Column="0" Text="{Binding Id}"/>
+							<Label Grid.Column="0" Text="{Binding ID}"/>
 							<Label Grid.Column="1" Text="{Binding Descricao}"/>
-							<Label Grid.Column="2" Text="{Binding Preco}"/>
-							<Label Grid.Column="3" Text="{Binding Quantidade}"/>
-							<Label Grid.Column="4" Text="{Binding Total}"/>
+							<Label Grid.Column="2" Text="{Binding latitude}"/>
+							<Label Grid.Column="3" Text="{Binding Longitude}"/>
+							<Label Grid.Column="4" Text="{Binding Temperatura Maxima}"/>
+                            <Label Grid.Column="5" Text="{Binding Temperatura Minima}"/>
+                            <Label Grid.Column="6" Text="{Binding Ventania}"/>
+                            <Label Grid.Column="7" Text="{Binding Ensolarado}"/>
+                            <Label Grid.Column="8" Text="{Binding Por do sol}"/>
 
 						</Grid>
 					</ViewCell>

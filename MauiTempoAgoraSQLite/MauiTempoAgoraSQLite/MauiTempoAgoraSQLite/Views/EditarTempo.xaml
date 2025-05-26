@@ -3,10 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiTempoAgoraSQLite.Views.EditarTempo"
              Title="EditarTempo">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+ 
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="salvar" Clicked="ToolbarItem_Clicked" />
+        </ContentPage.ToolbarItems>
+
+        <VerticalStackLayout>
+
+            <Label Text="Descrição do Tempo"/>
+            <Entry x:Name="txt_DESCRICAO" Text="{Binding Descricao}" />
+
+            <Label Text="Temperatura Máxima: "/>
+            <Entry x:Name="txt_TEMMAX" Text="{Binding Temperatura maxima}" Keyboard="Numeric"/>
+
+            <Label Text="Temperatura Mínima: "/>
+            <Entry x:Name="txt_TEMMIN"  Text="{Binding Temperatura minima}" Keyboard="Numeric"/>
+        </VerticalStackLayout>
+  
 </ContentPage>
