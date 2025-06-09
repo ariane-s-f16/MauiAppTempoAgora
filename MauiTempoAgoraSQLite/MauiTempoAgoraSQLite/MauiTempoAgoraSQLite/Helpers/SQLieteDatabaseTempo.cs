@@ -23,15 +23,14 @@ namespace MauiTempoAgoraSQLite.Helpers //
             return _conn.InsertAsync(t);
 
         }
+
         public Task<int> Delete(int id)
         {
             return _conn.Table<Tempo>().DeleteAsync(i => i.Id == id);
         }
-        public Task<List<Tempo>> Update(Tempo t)
+        public Task<int> DeleleteAll()
         {
-            string sql = "Update tempo description=?, temp_min=?, temp_min=?,  Where id=?";
-            return _conn.QueryAsync<Tempo>(sql, t.description, t.tempo_max, t.tempo_min, t.Id);
-
+            return _conn.DeleteAllAsync<Tempo>();
         }
 
         public Task<List<Tempo>> GetAll()
@@ -39,11 +38,12 @@ namespace MauiTempoAgoraSQLite.Helpers //
             return _conn.Table<Tempo>().ToListAsync();
         }
 
-        public Task<List<Tempo>> Search(string t)
+        public Task<List<Tempo>> Search(string q)
         {
-
-            string sql = "SELECT * FROM tempo WHERE description LIKE '%" + t + "%'";
+            string sql = "SELECT * FROM Tempo " +
+                         "WHERE description LIKE '%" + q + "%'";
 
             return _conn.QueryAsync<Tempo>(sql);
         }
     }
+}
